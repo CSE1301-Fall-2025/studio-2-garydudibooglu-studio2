@@ -18,15 +18,19 @@ public class Ruin {
         System.out.println("How many days do you want to simulate");
         int totalSimulations = sc.nextInt();
         for (int simulations = 1; simulations <= totalSimulations; simulations++){
-            while (startAmount < winLimit && startAmount > 0) {
+            int timesPlayed = 0;
+            int sA = startAmount;
+            while (sA < winLimit && sA > 0) {
                 if (Math.random() >= 1 - winChance) {
-                    startAmount++;
+                    sA++;
                 } else {
-                    startAmount--;
+                    sA--;
                 }
+                timesPlayed++;
             }
             System.out.println("Day: " + simulations);
-            if (startAmount == winLimit) {
+            System.out.println("Times played " + timesPlayed);
+            if (sA == winLimit) {
                 System.out.println("Success!");
             } else {
                 System.out.println("ruin!");
