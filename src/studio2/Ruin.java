@@ -17,9 +17,7 @@ public class Ruin {
 
         System.out.println("How many days do you want to simulate");
         int totalSimulations = sc.nextInt();
-        int simulations = 0;
-        while (simulations < totalSimulations) {
-            simulations++;
+        for (int simulations = 1; simulations <= totalSimulations; simulations++){
             while (startAmount < winLimit && startAmount > 0) {
                 if (Math.random() >= 1 - winChance) {
                     startAmount++;
